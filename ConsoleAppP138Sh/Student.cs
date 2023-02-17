@@ -24,22 +24,50 @@ namespace ConsoleAppP138Sh
 
         public void ChangeStudentGroup(int studentno, string groupno)
         {
+           foreach(var item in Students)
+           {
+                if(item.No==studentno)
+                {
+                    groupno=Console.ReadLine();
+                    item.GroupNo=groupno;
+                    
+                }
+           }
            
         }
 
         public Student FindStudentByNo(int no)
         {
-           
+            foreach (var item in Students)
+            {
+                if (item.No == no)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
 
-        public Student[] GetAllStudents()
+        public Student GetAllStudents()
         {
-           
+           foreach(var item in Students)
+            {
+                return item;
+            }
+           return null;
         }
 
-        public Student[] GetAvgPoint()
+        public double GetAvgPoint(string groupno)
         {
-           
+            double sum = 0;
+            int count = 0;
+
+           foreach(var item in Students)
+           {
+                sum += item.Point;
+                count++;
+           }
+           return sum/count;
         }
 
         public Student GetStudentByGroupNo(string groupno)
@@ -58,16 +86,26 @@ namespace ConsoleAppP138Sh
 
         }
 
-        public Student[] GetStudentsByDateRange()
+        public Student GetStudentsByDateRange(DateTime date1,DateTime date2)
         {
-           
+            foreach (var item in Students)
+            {
+                if (item.StartDate > date1 && item.StartDate < date2)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
 
-        public void RemoveStudent(Student studentno)
+        public void RemoveStudent(int studentno)
         {
             foreach(var item in Students)
             {
-                var rmv= item.No.Remove(studentno, 1);
+               if(item.No== studentno)
+                {
+                    
+                }
             }
 
             public static int count=0;
@@ -84,6 +122,7 @@ namespace ConsoleAppP138Sh
                 No = count;
               }
             }
+           
         }
 
         public Student Search(string search)
