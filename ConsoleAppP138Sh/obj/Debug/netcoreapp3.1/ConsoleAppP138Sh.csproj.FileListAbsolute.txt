@@ -1,0 +1,14 @@
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\obj\Debug\netcoreapp3.1\ConsoleAppP138Sh.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\obj\Debug\netcoreapp3.1\ConsoleAppP138Sh.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\obj\Debug\netcoreapp3.1\ConsoleAppP138Sh.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\obj\Debug\netcoreapp3.1\ConsoleAppP138Sh.AssemblyInfo.cs
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\obj\Debug\netcoreapp3.1\ConsoleAppP138Sh.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\bin\Debug\netcoreapp3.1\ConsoleAppP138Sh.exe
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\bin\Debug\netcoreapp3.1\ConsoleAppP138Sh.deps.json
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\bin\Debug\netcoreapp3.1\ConsoleAppP138Sh.runtimeconfig.json
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\bin\Debug\netcoreapp3.1\ConsoleAppP138Sh.runtimeconfig.dev.json
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\bin\Debug\netcoreapp3.1\ConsoleAppP138Sh.dll
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\bin\Debug\netcoreapp3.1\ConsoleAppP138Sh.pdb
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\obj\Debug\netcoreapp3.1\ConsoleAppP138Sh.dll
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\obj\Debug\netcoreapp3.1\ConsoleAppP138Sh.pdb
+C:\Users\ADMIN\Documents\ConsoleAppP138Sh\ConsoleAppP138Sh\obj\Debug\netcoreapp3.1\ConsoleAppP138Sh.genruntimeconfig.cache

@@ -6,6 +6,8 @@ namespace ConsoleAppP138Sh
     {
         static void Main(string[] args)
         {
+            Student student = new Student();
+
             string secin;
 
             do
@@ -27,17 +29,88 @@ namespace ConsoleAppP138Sh
                 {
                     
                     case "1":
-                        Console.WriteLine("Qrupunuzu daxil edin:");
+                        Console.WriteLine("\nQrupunuzu daxil edin:");
 
-                        
+                        string groupno= Console.ReadLine();
+
+                        Student findgroupno=student.GetStudentByGroupNo(groupno);
+
+                        if(findgroupno==null)
+                        {
+                            Console.WriteLine($"\n{ groupno} yoxdur!");
+                        }
+                        else
+                        {
+                            findgroupno.ShowInfo();
+                        }
+
                         break;
                     case "2":
-                        Console.WriteLine();
+                        Console.WriteLine("Telebelerin siyahisi:");
+
+                        student.GetAllStudents();
                         break;
                     case "3":
-                        Console.WriteLine();
+                        Console.WriteLine("Telebe elave edin:");
+
+                        string noo;
+                        int no;
+                        do
+                        {
+                            Console.Write("No: ");
+
+                            noo=Console.ReadLine();
+                            no=Convert.ToInt32(noo);
+                        }
+                        while(no==0);
+
+                        string fullname;
+                        do
+                        {
+                            Console.Write("FullName: ");
+
+                            fullname=Console.ReadLine();
+                        }
+                        while(!CheckFullName(fullname));
+
+                        string groupnoo;
+                        do
+                        {
+                            Console.Write("GroupNo: ");
+
+                            groupnoo=Console.ReadLine();
+                        }
+                        while(!CheckGroupNo(groupnoo));
+
+                        string pointt;
+                        int point;
+                        do
+                        {
+                            Console.Write("Point: ");
+
+                            pointt = Console.ReadLine();
+                            point = Convert.ToInt32(pointt);
+                        }
+                        while (point < 65);
+
+                        Console.Write("StartDate: ");
+
+                        string datetimee=Console.ReadLine();
+                        DateTime datetime=Convert.ToDateTime(datetimee);
+
+                        Student std = new Student()
+                        {
+                            No = no,
+                            FullName = fullname,
+                            GroupNo= groupnoo,
+                            Point= point,
+                            StartDate= datetime
+                        };
+
+                        student.AddStudent(std);
                         break;
                     case "4":
+
                         Console.WriteLine();
                         break;
                     case "5":
@@ -58,6 +131,66 @@ namespace ConsoleAppP138Sh
                 }
             }
             while (secin != "0");
+        }
+
+        static bool CheckFullName(string fullname)
+        {
+            if (string.IsNullOrWhiteSpace(fullname))
+            {
+                return false;
+            }
+            var split = fullname.Split(' ');
+
+            if (split.Length != 2)
+            {
+                return false;
+            }
+
+            if (!char.IsUpper(split[0][0]) || !char.IsUpper(split[1][0]) || split[0].Length < 3 || split[1].Length < 3)
+            {
+                return false;
+            }
+
+            for (int i = 1; i < split.Length; i++)
+            {
+                if (!char.IsLower(split[0][i]))
+                {
+                    return false;
+                }
+            }
+
+            for (int i = 1; i < split.Length; i++)
+            {
+                if (!char.IsLower(split[0][i]))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        static bool CheckGroupNo(string groupno)
+        {
+
+            if (string.IsNullOrWhiteSpace(groupno) || groupno.Length < 4)
+            {
+                return false;
+            }
+
+            if (!char.IsUpper(groupno[0]))
+            {
+                return false;
+            }
+
+            for (int i = 1; i < groupno.Length; i++)
+            {
+                if (!char.IsDigit(groupno[i]))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

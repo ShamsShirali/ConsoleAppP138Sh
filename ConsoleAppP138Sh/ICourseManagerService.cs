@@ -25,7 +25,7 @@ namespace ConsoleAppP138Sh
         public Student FindStudentByNo(int no);
 
 
-        public Student Search(string search);
+        public Student[] Search(string search);
 
         public Student GetStudentsByDateRange(DateTime date1,DateTime date2);
 
