@@ -33,7 +33,7 @@ namespace ConsoleAppP138Sh
                     
                 }
            }
-           
+
         }
 
         public Student FindStudentByNo(int no)
@@ -100,13 +100,14 @@ namespace ConsoleAppP138Sh
 
         public void RemoveStudent(int studentno)
         {
-            foreach(var item in Students)
+            foreach (var item in Students)
             {
-               if(item.No== studentno)
+                if (item.No == studentno)
                 {
-                    
+
                 }
             }
+        }
 
             public static int count=0;
 

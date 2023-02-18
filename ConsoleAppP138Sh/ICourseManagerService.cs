@@ -10,16 +10,16 @@ namespace ConsoleAppP138Sh
 
         Student[] Students { get; set; }
 
-        public void AddStudent(string student);
+        public void AddStudent(Student student);
 
 
         public void ChangeStudentGroup(int studentno, string groupno);
 
 
 
-        public Student[] GetStudentByGroupNo(string groupno);
+        public Student GetStudentByGroupNo(string groupno);
 
-        public Student[] GetAllStudents();
+        public Student GetAllStudents();
 
 
         public Student FindStudentByNo(int no);
@@ -27,13 +27,13 @@ namespace ConsoleAppP138Sh
 
         public Student Search(string search);
 
-        public Student[] GetStudentsByDateRange();
+        public Student GetStudentsByDateRange(DateTime date1,DateTime date2);
 
 
-        public void RemoveStudent();
+        public void RemoveStudent(int studentno);
 
 
-        public Student[] GetAvgPoint();
+        public double GetAvgPoint(string groupno);
        
     }
 }
