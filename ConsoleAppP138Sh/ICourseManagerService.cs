@@ -30,7 +30,7 @@ namespace ConsoleAppP138Sh
         public Student[] GetStudentsByDateRange(DateTime date1,DateTime date2);
 
 
-        public void RemoveStudent(int studentno);
+        public Student[] RemoveStudent(int studentno);
 
 
         public double GetAvgPoint(string groupno);

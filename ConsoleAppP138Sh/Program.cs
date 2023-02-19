@@ -194,7 +194,31 @@ namespace ConsoleAppP138Sh
                     case "7":
                         Console.WriteLine("Sileceyiniz telebeni daxil edin: ");
 
+                        string stddn;
+                        int stdn;
+                        do
+                        {
+                            Console.Write("No: ");
 
+                            stddn = Console.ReadLine();
+                            stdn = Convert.ToInt32(stddn);
+                        }
+                        while (stdn == 0);
+
+                        var see4 = student.RemoveStudent(stdn);
+
+                        foreach (var item in see4)
+                        {
+                            if (item == null)
+                            {
+                                Console.WriteLine("\nSiyahida axtarisiniza uygun netice tapilmamaqdadir:)");
+                            }
+                            else
+                            {
+                                Console.Write($"\nNo: {item.No} - FullName: {item.FullName} - GroupNo: {item.GroupNo} - Point: {item.Point} - StartDate: {item.StartDate}");
+                               
+                            }
+                        }
                         break;
                     case "8":
                         Console.WriteLine("Grupu daxil edin:");

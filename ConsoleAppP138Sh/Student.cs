@@ -16,14 +16,6 @@ namespace ConsoleAppP138Sh
         Student[] _students=new Student[0];
         public Student[] Students { get=> _students; set=>_students=value; }
 
-        public static int count;
-
-        public Student() 
-        {
-            count++;
-            No = count;
-        }
-
         public string FullName
         {
             get
@@ -208,15 +200,29 @@ namespace ConsoleAppP138Sh
             return rangestd;
         }
 
-        public void RemoveStudent(int studentno)
+        public Student[] RemoveStudent(int studentno)
         {
+            Student[] stdd=new Student[0];
+
             foreach (var item in Students)
             {
                 if (item.No == studentno)
                 {
-                  
+                    continue;
+                }
+                else
+                {
+                    Array.Resize(ref stdd, stdd.Length + 1);
+                    stdd[stdd.Length-1]=item;
+                    
                 }
             }
+            for(int i=studentno;i<Students.Length;i++)
+            {
+                Students[i].No--;
+            }
+            
+            return stdd;
         }
 
         public Student[] Search(string search)
