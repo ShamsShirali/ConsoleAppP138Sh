@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace ConsoleAppP138Sh
 {
@@ -47,8 +49,20 @@ namespace ConsoleAppP138Sh
                         break;
                     case "2":
                         Console.WriteLine("Telebelerin siyahisi:");
+                        
+                        var see=student.GetAllStudents(); 
 
-                        student.GetAllStudents();
+                        foreach(var item in see)
+                        {
+                            if (item == null)
+                            {
+                                Console.WriteLine("\nSiyahi bosdur:(");
+                            }
+                            else
+                            {
+                                Console.Write($"\nNo: {item.No} - FullName: {item.FullName} - GroupNo: {item.GroupNo} - Point: {item.Point} - StartDate: {item.StartDate}");
+                            }
+                        }
                         break;
                     case "3":
                         Console.WriteLine("Telebe elave edin:");
@@ -110,17 +124,81 @@ namespace ConsoleAppP138Sh
                         student.AddStudent(std);
                         break;
                     case "4":
+                        Console.WriteLine("\nTarix araliqlarini elave edin:");
 
-                        Console.WriteLine();
+                        Console.Write("Baslangic araliq: ");
+                        string datee1 = Console.ReadLine();
+                        DateTime date1 = Convert.ToDateTime(datee1);
+
+                        Console.Write("Son araliq: ");
+                        string datee2= Console.ReadLine();
+                        DateTime date2 = Convert.ToDateTime(datee2);
+
+                        var see2=student.GetStudentsByDateRange(date1, date2);
+
+                        foreach(var item in see2)
+                        {
+                            if (item == null)
+                            {
+                                Console.WriteLine("\nSiyahi bosdur:(");
+                            }
+                            else
+                            {
+                                Console.Write($"\nNo: {item.No} - FullName: {item.FullName} - GroupNo: {item.GroupNo} - Point: {item.Point} - StartDate: {item.StartDate}");
+                            }
+                        }
                         break;
                     case "5":
-                        Console.WriteLine();
+                        Console.WriteLine("\nAxtaris:");
+
+                        string look=Console.ReadLine();
+                        var see3 = student.Search(look);
+
+                        foreach(var item in see3)
+                        {
+                            if (look == null)
+                            {
+                                Console.WriteLine("Siyahida axtarisiniza uygun netice tapilmamaqdadir:)");
+                            }
+                            else
+                            {
+                                Console.Write($"\nNo: {item.No} - FullName: {item.FullName} - GroupNo: {item.GroupNo} - Point: {item.Point} - StartDate: {item.StartDate}");
+                            }
+                        }
                         break;
                     case "6":
-                        Console.WriteLine();
+                        string stdnoo;
+                        int stdno;
+                        do
+                        {
+                            Console.Write("No: ");
+
+                            stdnoo = Console.ReadLine();
+                            stdno = Convert.ToInt32(stdnoo);
+                        }
+                        while (stdno == 0);
+
+                        string groupn;
+                        do
+                        {
+                            Console.Write("GroupNo-nu deyise bilersiniz: ");
+
+                            groupn = Console.ReadLine();
+                        }
+                        while (!CheckGroupNo(groupn));
+
+                        student.ChangeStudentGroup(stdno, groupn);
+
+                        
                         break;
                     case "7":
                         Console.WriteLine();
+                        break;
+                    case "8":
+                        Console.WriteLine("Grupu daxil edin:");
+                        string grouppno = Console.ReadLine();
+
+                        Console.WriteLine(student.GetAvgPoint(grouppno));
                         break;
                     case "0":
                         Console.WriteLine("\nMenudan cixdiniz(");

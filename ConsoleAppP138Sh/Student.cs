@@ -126,9 +126,10 @@ namespace ConsoleAppP138Sh
            {
                 if(item.No==studentno)
                 {
-                    groupno=Console.ReadLine();
-                    item.GroupNo=groupno;
                     
+                    item.GroupNo=groupno;
+
+                    Console.Write($"\nNo: {item.No} - FullName: {item.FullName} - GroupNo: {item.GroupNo} - Point: {item.Point} - StartDate: {item.StartDate}");
                 }
            }
 
@@ -146,13 +147,16 @@ namespace ConsoleAppP138Sh
             return null;
         }
 
-        public Student GetAllStudents()
+        public Student[] GetAllStudents()
         {
+            Student[] allstd = new Student[0];
            foreach(var item in Students)
             {
-                return item;
+                Array.Resize(ref allstd,allstd.Length+1);
+                allstd[allstd.Length-1] = item;
+
             }
-           return null;
+           return allstd;
         }
 
         public double GetAvgPoint(string groupno)
@@ -162,8 +166,11 @@ namespace ConsoleAppP138Sh
 
            foreach(var item in Students)
            {
-                sum += item.Point;
-                count++;
+                if (item.GroupNo == groupno)
+                {
+                    sum += item.Point;
+                    count++;
+                }
            }
            return sum/count;
         }
@@ -184,16 +191,21 @@ namespace ConsoleAppP138Sh
 
         }
 
-        public Student GetStudentsByDateRange(DateTime date1,DateTime date2)
+        public Student[] GetStudentsByDateRange(DateTime date1,DateTime date2)
         {
+            Student[] rangestd= new Student[0];
+
             foreach (var item in Students)
             {
                 if (item.StartDate > date1 && item.StartDate < date2)
                 {
-                    return item;
+                   Array.Resize(ref rangestd,rangestd.Length+1);
+                    rangestd[rangestd.Length-1]=item;
+
+                    
                 }
             }
-            return null;
+            return rangestd;
         }
 
         public void RemoveStudent(int studentno)
@@ -222,7 +234,7 @@ namespace ConsoleAppP138Sh
 
            return wantedSearch;
 
-            
+
         }
 
         public void ShowInfo()

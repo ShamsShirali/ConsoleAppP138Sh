@@ -19,7 +19,7 @@ namespace ConsoleAppP138Sh
 
         public Student GetStudentByGroupNo(string groupno);
 
-        public Student GetAllStudents();
+        public Student[] GetAllStudents();
 
 
         public Student FindStudentByNo(int no);
@@ -27,7 +27,7 @@ namespace ConsoleAppP138Sh
 
         public Student[] Search(string search);
 
-        public Student GetStudentsByDateRange(DateTime date1,DateTime date2);
+        public Student[] GetStudentsByDateRange(DateTime date1,DateTime date2);
 
 
         public void RemoveStudent(int studentno);
