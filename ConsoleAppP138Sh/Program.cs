@@ -156,9 +156,9 @@ namespace ConsoleAppP138Sh
 
                         foreach(var item in see3)
                         {
-                            if (look == null)
+                            if (item == null)
                             {
-                                Console.WriteLine("Siyahida axtarisiniza uygun netice tapilmamaqdadir:)");
+                                Console.WriteLine("\nSiyahida axtarisiniza uygun netice tapilmamaqdadir:)");
                             }
                             else
                             {
@@ -192,7 +192,9 @@ namespace ConsoleAppP138Sh
                         
                         break;
                     case "7":
-                        Console.WriteLine();
+                        Console.WriteLine("Sileceyiniz telebeni daxil edin: ");
+
+
                         break;
                     case "8":
                         Console.WriteLine("Grupu daxil edin:");

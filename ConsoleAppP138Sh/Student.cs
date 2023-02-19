@@ -214,7 +214,7 @@ namespace ConsoleAppP138Sh
             {
                 if (item.No == studentno)
                 {
-                //    Remove(item);
+                  
                 }
             }
         }
@@ -227,8 +227,8 @@ namespace ConsoleAppP138Sh
             {
                 if (item.FullName.Contains(search) || item.GroupNo.Contains(search)) 
                 {
-                    Array.Resize(ref _students, _students.Length + 1);
-                    _students[_students.Length - 1] = item;
+                    Array.Resize(ref wantedSearch,wantedSearch.Length + 1);
+                    wantedSearch[wantedSearch.Length - 1] = item;
                 }
             }
 
